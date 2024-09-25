@@ -10,3 +10,14 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }, 3000); // Display intro for 3 seconds
 });
+
+window.addEventListener('load', () => {
+    const hubElement = document.getElementById('hub');
+    
+    // You can add more dynamic behavior using TS
+    if (hubElement) {
+        setTimeout(() => {
+            hubElement.style.animationPlayState = 'running';
+        }, 500); // Delay before starting the bounce
+    }
+});
