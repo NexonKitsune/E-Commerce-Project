@@ -32,17 +32,20 @@ body, html {
     text-transform: uppercase; /* Uppercase for all text */
 }
 
-/* Orange color for "Sliky" inside the logo */
+/* White color for "Sliky" */
 .intro .logo-part1 {
-    color: #FF5733; /* Orange color for "Sliky" */
+    color: #fff; /* White color for "Sliky" */
     animation: slideIn 1.5s ease forwards; /* Slide in animation for the logo */
 }
 
-/* White color for "Shop" with margin between the two parts */
+/* Styling for "Sneakers" with an orange box */
 .intro .logo-part2 {
-    color: #fff; /* White color for "Shop" */
-    margin-left: 20px; /* Spacing between "Sliky" and "Shop" */
-    animation: slideIn 2s ease forwards; /* Delayed slide in for smoother effect */
+    color: #000; /* Black text color for "Sneakers" */
+    background-color: #FF5733; /* Orange background color for the box */
+    padding: 5px 10px; /* Padding inside the box */
+    border-radius: 5px; /* Rounded corners */
+    margin-left: 20px; /* Spacing between "Sliky" and "Sneakers" */
+    animation: slideIn 2s ease forwards; /* Slide in animation */
 }
 
 /* Keyframe for sliding the logo up into view */

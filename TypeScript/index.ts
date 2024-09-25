@@ -6,8 +6,7 @@ document.addEventListener("DOMContentLoaded", function() {
             introElement.style.transform = "scale(0.9)";
             setTimeout(() => {
                 introElement.style.display = "none";
-            }, 1000); // รอให้อนิเมชันจบก่อนซ่อน intro
+            }, 1000); // Wait for the animation to finish before hiding intro
         }
-    }, 4000); // แสดง intro เป็นเวลา 4 วินาที
+    }, 3000); // Display intro for 3 seconds
 });
-
