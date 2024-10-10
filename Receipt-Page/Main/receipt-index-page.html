@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Success</title>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&display=swap" rel="stylesheet"> <!-- ฟอนต์ Comfortaa -->
+    <style>
+        body {
+            font-family: 'Comfortaa', sans-serif; /* ฟอนต์น่ารัก */
+            background-color: #f0f0f0; /* พื้นหลังสีอ่อน */
+            display: flex;
+            justify-content: center; /* จัดกลางแนวนอน */
+            align-items: center; /* จัดกลางแนวตั้ง */
+            height: 100vh; /* ความสูงเต็มหน้าจอ */
+            margin: 0;
+        }
+
+        .success-window {
+            background-color: #ffffff; /* พื้นในสีขาว */
+            border-radius: 20px; /* มุมกลม */
+            padding: 30px; /* ระยะห่างภายใน */
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); /* เงา */
+            width: 300px; /* ความกว้างของหน้าต่าง */
+            text-align: center; /* จัดกลางข้อความ */
+            position: relative; /* สำหรับการจัดตำแหน่งของปุ่ม */
+            animation: fadeIn 0.5s; /* การอนิเมทให้ปรากฏ */
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .title {
+            font-size: 28px; /* ขนาดตัวอักษร */
+            margin-bottom: 10px; /* ระยะห่างด้านล่าง */
+            color: #5c6bc0; /* สีม่วงนุ่ม */
+        }
+
+        .message {
+            font-size: 18px; /* ขนาดตัวอักษร */
+            margin-bottom: 15px; /* ระยะห่างด้านล่าง */
+            color: #555555; /* สีตัวอักษร */
+        }
+
+        .thank-you {
+            font-size: 24px; /* ขนาดตัวอักษร */
+            font-weight: bold; /* ตัวหนา */
+            margin-bottom: 10px; /* ระยะห่างด้านล่าง */
+            color: #8bc34a; /* สีเขียวสดใส */
+        }
+
+        .timer {
+            font-size: 16px; /* ขนาดตัวอักษร */
+            color: #ff9800; /* สีส้มสำหรับเวลานับถอยหลัง */
+            margin-bottom: 20px; /* ระยะห่างด้านล่าง */
+            font-weight: bold; /* ตัวหนา */
+        }
+
+        .back-button {
+            background-color: #5c6bc0; /* พื้นหลังปุ่มสีม่วง */
+            color: #ffffff; /* ตัวอักษรสีขาว */
+            border: none; /* ไม่มีกรอบ */
+            border-radius: 10px; /* มุมกลม */
+            padding: 10px 15px; /* ระยะห่างภายใน */
+            font-size: 16px; /* ขนาดตัวอักษร */
+            cursor: pointer; /* เปลี่ยนเคอร์เซอร์เป็นมือเมื่อวางเหนือ */
+            transition: background-color 0.3s, transform 0.3s; /* การเปลี่ยนแปลงสีและขนาดเมื่อวางเหนือ */
+        }
+
+        .back-button:hover {
+            background-color: #ffffff; /* เปลี่ยนสีพื้นหลังเมื่อวางเหนือ */
+            color: #5c6bc0; /* เปลี่ยนสีตัวอักษรเมื่อวางเหนือ */
+            transform: scale(1.05); /* ขยายขนาดเล็กน้อยเมื่อวางเหนือ */
+        }
+
+        /* ปุ่มปิด */
+        .close {
+            position: absolute; /* จัดตำแหน่งแบบสัมพัทธ์ */
+            top: 15px; /* ระยะห่างจากด้านบน */
+            right: 15px; /* ระยะห่างจากด้านขวา */
+            cursor: pointer; /* เปลี่ยนเคอร์เซอร์เป็นมือเมื่อวางเหนือ */
+            font-size: 24px; /* ขนาดตัวอักษร */
+            color: #ff4081; /* สีชมพูสำหรับปุ่มปิด */
+            transition: transform 0.3s, color 0.3s; /* การเปลี่ยนแปลงขนาดและสีเมื่อวางเหนือ */
+        }
+
+        .close:hover {
+            transform: scale(1.2); /* ขยายขนาดเมื่อวางเหนือ */
+            color: #ffffff; /* เปลี่ยนสีเมื่อวางเหนือ */
+        }
+    </style>
+</head>
+<body>
+    <div class="success-window" id="successWindow">
+        <div class="close" onclick="closeWindow()">✖</div>
+        <div class="title">การชำระเงินสำเร็จ!</div>
+        <div class="message">ขอบคุณที่ช้อปกับเรา</div>
+        <div class="thank-you">ขอบคุณ!</div>
+        <div class="timer" id="countdown">ปิดใน: 5 วินาที</div>
+        <button class="back-button" onclick="goToHome()">กลับไปยังหน้าหลัก</button> <!-- ปุ่มกลับไปยังหน้าหลัก -->
+    </div>
+
+    <script>
+        let timeLeft = 5; // ตั้งค่าจำนวนเวลาที่จะนับถอยหลัง
+        const countdownElement = document.getElementById('countdown'); // อ้างอิงถึง element สำหรับนับถอยหลัง
+
+        // ฟังก์ชันสำหรับปิดหน้าต่าง
+        function closeWindow() {
+            document.getElementById('successWindow').style.display = 'none'; // ปิดหน้าต่าง
+        }
+
+        // ฟังก์ชันสำหรับนำทางกลับไปยังหน้าหลัก
+        function goToHome() {
+            window.location.href = "index.html"; // เปลี่ยน URL เป็นหน้าหลัก
+        }
+
+        // ฟังก์ชันสำหรับนับถอยหลัง
+        function startCountdown() {
+            const countdownInterval = setInterval(() => {
+                timeLeft--; // ลดจำนวนเวลาลง
+                countdownElement.textContent = `ปิดใน: ${timeLeft} วินาที`; // อัปเดตข้อความนับถอยหลัง
+                
+                // ตรวจสอบว่าเวลาหมดแล้วหรือยัง
+                if (timeLeft <= 0) {
+                    clearInterval(countdownInterval); // หยุดนับถอยหลัง
+                    goToHome(); // นำผู้ใช้กลับไปยังหน้าหลัก
+                }
+            }, 1000); // ตั้งเวลาให้ทำทุก ๆ 1000 มิลลิวินาที (1 วินาที)
+        }
+
+        startCountdown(); // เริ่มนับถอยหลัง
+    </script>
+</body>
+</html>
