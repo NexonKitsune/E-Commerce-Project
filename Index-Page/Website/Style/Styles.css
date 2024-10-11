@@ -10,7 +10,7 @@ body, html {
 
 /* Intro container covering the full screen */
 .intro {
-    position: absolute;
+    position: fixed; /* ใช้ fixed เพื่อให้ติดอยู่ที่มุมมอง */
     top: 0;
     left: 0;
     right: 0;
@@ -21,6 +21,7 @@ body, html {
     align-items: center; /* Centers content vertically */
     background-color: #000; /* Black background for intro */
     transition: opacity 1s ease, transform 1s ease; /* Smooth fade and scale animation */
+    z-index: 9999; /* เพิ่ม z-index เพื่อให้แน่ใจว่าอยู่ด้านบนสุด */
 }
 
 /* Logo styling inside the intro section */
@@ -111,3 +112,6 @@ body, html {
         transform: translateY(-15px);
     }
 }
+
+/* NAVBAR */
+

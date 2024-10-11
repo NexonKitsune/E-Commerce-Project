@@ -1,136 +1,115 @@
 <!DOCTYPE html>
-<html lang="th">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Payment Success</title>
-    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&display=swap" rel="stylesheet"> <!-- ฟอนต์ Comfortaa -->
+    <title>Thank You Page</title>
     <style>
-        body {
-            font-family: 'Comfortaa', sans-serif; /* ฟอนต์น่ารัก */
-            background-color: #f0f0f0; /* พื้นหลังสีอ่อน */
-            display: flex;
-            justify-content: center; /* จัดกลางแนวนอน */
-            align-items: center; /* จัดกลางแนวตั้ง */
-            height: 100vh; /* ความสูงเต็มหน้าจอ */
+        body, html {
             margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden; /* ป้องกันการเลื่อน */
         }
 
-        .success-window {
-            background-color: #ffffff; /* พื้นในสีขาว */
-            border-radius: 20px; /* มุมกลม */
-            padding: 30px; /* ระยะห่างภายใน */
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); /* เงา */
-            width: 300px; /* ความกว้างของหน้าต่าง */
-            text-align: center; /* จัดกลางข้อความ */
-            position: relative; /* สำหรับการจัดตำแหน่งของปุ่ม */
-            animation: fadeIn 0.5s; /* การอนิเมทให้ปรากฏ */
+        /* Background GIF */
+        .background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('/Picture/Thankyou.gif') no-repeat center center;
+            background-size: cover; /* ให้ภาพครอบคลุมทั้งหน้าจอ */
+            filter: blur(15px); /* เบลอพื้นหลัง */
+            z-index: -1; /* ให้พื้นหลังอยู่ด้านหลัง */
         }
 
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
+        .thank-you-container {
+            text-align: center;
+            color: black; /* เปลี่ยนสีข้อความเป็นสีดำ */
+            z-index: 1;
+            opacity: 0; /* เริ่มจากความโปร่งใส */
+            animation: fadeInSlide 3s ease-in-out forwards; /* เพิ่มอนิเมชั่นเลื่อนเข้า */
         }
 
-        .title {
-            font-size: 28px; /* ขนาดตัวอักษร */
-            margin-bottom: 10px; /* ระยะห่างด้านล่าง */
-            color: #5c6bc0; /* สีม่วงนุ่ม */
+        h1 {
+            font-size: 3em;
+            animation: slideIn 2s ease-in-out forwards; /* เลื่อนเข้า */
         }
 
-        .message {
-            font-size: 18px; /* ขนาดตัวอักษร */
-            margin-bottom: 15px; /* ระยะห่างด้านล่าง */
-            color: #555555; /* สีตัวอักษร */
+        p {
+            font-size: 1.5em;
+            animation: slideIn 2.5s ease-in-out forwards;
         }
 
-        .thank-you {
-            font-size: 24px; /* ขนาดตัวอักษร */
-            font-weight: bold; /* ตัวหนา */
-            margin-bottom: 10px; /* ระยะห่างด้านล่าง */
-            color: #8bc34a; /* สีเขียวสดใส */
+        a {
+            text-decoration: none; /* เอาเส้นใต้ของลิงก์ออก */
         }
 
-        .timer {
-            font-size: 16px; /* ขนาดตัวอักษร */
-            color: #ff9800; /* สีส้มสำหรับเวลานับถอยหลัง */
-            margin-bottom: 20px; /* ระยะห่างด้านล่าง */
-            font-weight: bold; /* ตัวหนา */
+        .button {
+            display: inline-block; /* ทำให้เป็นบล็อกที่สามารถใช้ padding ได้ */
+            padding: 15px 30px;
+            font-size: 1.2em;
+            background-color: #1c1c1c;
+            border: none;
+            border-radius: 10px;
+            color: white;
+            cursor: pointer;
+            animation: bounceIn 3s ease; /* อนิเมชั่นสำหรับปุ่ม */
+            transition: background-color 0.3s ease; /* เพิ่มการเปลี่ยนสี */
         }
 
-        .back-button {
-            background-color: #5c6bc0; /* พื้นหลังปุ่มสีม่วง */
-            color: #ffffff; /* ตัวอักษรสีขาว */
-            border: none; /* ไม่มีกรอบ */
-            border-radius: 10px; /* มุมกลม */
-            padding: 10px 15px; /* ระยะห่างภายใน */
-            font-size: 16px; /* ขนาดตัวอักษร */
-            cursor: pointer; /* เปลี่ยนเคอร์เซอร์เป็นมือเมื่อวางเหนือ */
-            transition: background-color 0.3s, transform 0.3s; /* การเปลี่ยนแปลงสีและขนาดเมื่อวางเหนือ */
+        .button:hover {
+            background-color: #000000;
+            transform: scale(1.1);
         }
 
-        .back-button:hover {
-            background-color: #ffffff; /* เปลี่ยนสีพื้นหลังเมื่อวางเหนือ */
-            color: #5c6bc0; /* เปลี่ยนสีตัวอักษรเมื่อวางเหนือ */
-            transform: scale(1.05); /* ขยายขนาดเล็กน้อยเมื่อวางเหนือ */
+        /* Keyframes for fade-in and slide-up animation */
+        @keyframes fadeInSlide {
+            0% {
+                opacity: 0;
+                transform: translateY(100px); /* เลื่อนจากด้านล่าง */
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0); /* เลื่อนกลับมาที่ตำแหน่งปกติ */
+            }
         }
 
-        /* ปุ่มปิด */
-        .close {
-            position: absolute; /* จัดตำแหน่งแบบสัมพัทธ์ */
-            top: 15px; /* ระยะห่างจากด้านบน */
-            right: 15px; /* ระยะห่างจากด้านขวา */
-            cursor: pointer; /* เปลี่ยนเคอร์เซอร์เป็นมือเมื่อวางเหนือ */
-            font-size: 24px; /* ขนาดตัวอักษร */
-            color: #ff4081; /* สีชมพูสำหรับปุ่มปิด */
-            transition: transform 0.3s, color 0.3s; /* การเปลี่ยนแปลงขนาดและสีเมื่อวางเหนือ */
+        @keyframes slideIn {
+            0% {
+                opacity: 0;
+                transform: translateX(-100px); /* เลื่อนเข้าจากซ้าย */
+            }
+            100% {
+                opacity: 1;
+                transform: translateX(0); /* กลับมาตำแหน่งปกติ */
+            }
         }
 
-        .close:hover {
-            transform: scale(1.2); /* ขยายขนาดเมื่อวางเหนือ */
-            color: #ffffff; /* เปลี่ยนสีเมื่อวางเหนือ */
+        @keyframes bounceIn {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-20px); }
+            60% { transform: translateY(-10px); }
         }
     </style>
 </head>
 <body>
-    <div class="success-window" id="successWindow">
-        <div class="close" onclick="closeWindow()">✖</div>
-        <div class="title">การชำระเงินสำเร็จ!</div>
-        <div class="message">ขอบคุณที่ช้อปกับเรา</div>
-        <div class="thank-you">ขอบคุณ!</div>
-        <div class="timer" id="countdown">ปิดใน: 5 วินาที</div>
-        <button class="back-button" onclick="goToHome()">กลับไปยังหน้าหลัก</button> <!-- ปุ่มกลับไปยังหน้าหลัก -->
+    <!-- Background GIF -->
+    <div class="background"></div>
+
+    <!-- Thank You Content -->
+    <div class="thank-you-container">
+        <h1>Thank You!</h1>
+        <p>Your purchase has been completed successfully.</p>
+        <a href="/Index-Page/Website/index.html"> <!-- เปลี่ยนเป็น URL ของหน้าแรก -->
+            <div class="button">Go to Homepage</div>
+        </a>
     </div>
-
-    <script>
-        let timeLeft = 5; // ตั้งค่าจำนวนเวลาที่จะนับถอยหลัง
-        const countdownElement = document.getElementById('countdown'); // อ้างอิงถึง element สำหรับนับถอยหลัง
-
-        // ฟังก์ชันสำหรับปิดหน้าต่าง
-        function closeWindow() {
-            document.getElementById('successWindow').style.display = 'none'; // ปิดหน้าต่าง
-        }
-
-        // ฟังก์ชันสำหรับนำทางกลับไปยังหน้าหลัก
-        function goToHome() {
-            window.location.href = "index.html"; // เปลี่ยน URL เป็นหน้าหลัก
-        }
-
-        // ฟังก์ชันสำหรับนับถอยหลัง
-        function startCountdown() {
-            const countdownInterval = setInterval(() => {
-                timeLeft--; // ลดจำนวนเวลาลง
-                countdownElement.textContent = `ปิดใน: ${timeLeft} วินาที`; // อัปเดตข้อความนับถอยหลัง
-                
-                // ตรวจสอบว่าเวลาหมดแล้วหรือยัง
-                if (timeLeft <= 0) {
-                    clearInterval(countdownInterval); // หยุดนับถอยหลัง
-                    goToHome(); // นำผู้ใช้กลับไปยังหน้าหลัก
-                }
-            }, 1000); // ตั้งเวลาให้ทำทุก ๆ 1000 มิลลิวินาที (1 วินาที)
-        }
-
-        startCountdown(); // เริ่มนับถอยหลัง
-    </script>
 </body>
 </html>
