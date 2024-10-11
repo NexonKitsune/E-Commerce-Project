@@ -1,89 +1,136 @@
-body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f8f9fa; /* สีพื้นหลังแบบอ่อน */
-    margin: 0;
-    padding: 0;
+
+/* NAV BARS */
+@font-face {
+    font-family: 'Robot9000';
+    src: url('/Front/robot-9000-font/Robot9000-MVxZx.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
 }
 
-.container {
-    max-width: 800px;
-    margin: 50px auto;
-    background-color: #ffffff;
-    border-radius: 10px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    padding: 30px;
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5; /* Light background color */
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background-color: #ffffff; /* Navbar background color */
+    border-bottom: 2px solid #ddd; /* Bottom border */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Shadow for aesthetics */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    transition: background-color 0.3s; /* Smooth transition for background */
+}
+
+.navbar:hover {
+    background-color: #f9f9f9; /* Change background color on hover */
+}
+
+.navbar-left,
+.navbar-right {
+    display: flex;
+    gap: 20px; /* Reduced gap to 20px for closer spacing */
+}
+
+.navbar-left a,
+.navbar-right a {
+    text-decoration: none;
+    color: #333; /* Darker color for better readability */
+    font-size: 18px; /* Increased font size for links */
+    font-weight: bold;
+    transition: color 0.3s, transform 0.3s; /* Added transition for transform */
+}
+
+.navbar-left a:hover,
+.navbar-right a:hover {
+    color: #000000; /* Change color on hover */
+    transform: translateY(-2px); /* Slight upward movement on hover */
+}
+
+/* Use Source Code Pro for gift guide and sale */
+.navbar-left a {
+    font-family: 'Source Code Pro', monospace; /* Use Source Code Pro font */
+}
+
+.navbar-center {
+    font-family: 'Robot9000', sans-serif; /* Use Robot 9000 font */
+    font-size: 48px; /* Keep the font size for "SNEAKERS" */
+    font-weight: 900; /* Bold text */
+    letter-spacing: 8px; /* Increase letter spacing */
+    color: #333;
+}
+
+.icon {
+    width: 28px; /* Increased icon width */
+    height: 28px; /* Increased icon height */
+}
+
+.icon:hover {
+    transform: scale(1.1); /* Scale icon on hover */
+}
+
+/* Style for the underline */
+.navbar-underline {
+    height: 2px; /* Thickness of the underline */
+    background-color: #333; /* Color of the underline */
+    width: 100%; /* Full width */
+    position: relative; /* Position relative to the nav */
+    top: 0; /* Position just below the nav */
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column; /* ให้ nav เป็นแนวตั้ง */
+        padding: 10px; /* ปรับ padding สำหรับ mobile */
+    }
+
+    .navbar-center {
+        font-size: 36px; /* ปรับขนาดฟอนต์สำหรับ "SNEAKERS" */
+        letter-spacing: 4px; /* ปรับระยะห่างระหว่างตัวอักษร */
+        margin-bottom: 10px; /* เพิ่มระยะห่างจาก nav ข้างล่าง */
+    }
+
+    .navbar-left {
+        display: flex;
+        flex-direction: column; /* ให้ navbar-left เป็นแนวตั้ง */
+        gap: 5px; /* เพิ่มระยะห่างระหว่างลิงก์ */
+        align-items: center; /* จัดกลาง */
+    }
+
+    .navbar-left a {
+        font-size: 16px; /* ปรับขนาดฟอนต์สำหรับลิงก์ */
+        font-weight: bold;
+    }
+}
+
+/* CONTAINERS */
+
+
+
+/* Footer Styles */
+.footer-container {
+    margin-top: 20px;
     text-align: center;
 }
 
-.success-message {
-    background-color: #dff0d8;
-    border: 1px solid #d6e9c6;
-    border-radius: 5px;
-    padding: 15px;
-    margin-bottom: 20px;
+.footer-underline {
+    height: 2px;
+    background-color: #ccc;
+    margin: 10px 0;
 }
 
-.success-message h1 {
-    color: #3c763d; /* สีเขียวเข้ม */
-    margin: 0;
+.icon-row {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
 }
 
-.success-message p {
-    color: #3c763d; /* สีเขียวเข้ม */
-}
-
-.receipt {
-    margin: 20px 0;
-}
-
-h2 {
-    color: #333;
-    margin-bottom: 15px;
-}
-
-p {
-    font-size: 16px;
-    color: #555;
-}
-
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-}
-
-th, td {
-    border: 1px solid #ddd;
-    padding: 8px;
-    text-align: left;
-}
-
-th {
-    background-color: #f2f2f2;
-    color: #333;
-}
-
-tbody tr:hover {
-    background-color: #f9f9f9;
-}
-
-strong {
-    color: #d9534f;
-    font-size: 18px;
-}
-
-button {
-    background-color: #5cb85c;
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    margin-top: 20px;
-    transition: background-color 0.3s;
-}
-
-button:hover {
-    background-color: #4cae4c;
+.footer-icon {
+    width: 30px;
+    height: 30px;
 }
