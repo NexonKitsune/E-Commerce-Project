@@ -195,3 +195,28 @@ input[type="submit"].submit_btn {
 input[type="submit"].submit_btn:hover {
     background-color: #45a049;
 }
+
+/* FOOSTER */
+.footer-container {
+    background-color: #f1f1f1; /* สีพื้นหลังฟุตเตอร์ */
+    padding: 20px 0; /* เพิ่ม padding ให้ฟุตเตอร์ */
+    text-align: center; /* จัดข้อความและไอคอนให้อยู่กลาง */
+}
+
+.icon-row {
+    display: flex; /* ใช้ flexbox ในการจัดเรียง */
+    justify-content: center; /* จัดไอคอนให้อยู่ตรงกลาง */
+    gap: 15px; /* ระยะห่างระหว่างไอคอน */
+}
+
+.footer-icon {
+    width: 40px; /* ขนาดความกว้างของไอคอน */
+    height: auto; /* ความสูงจะปรับตามขนาดของความกว้าง */
+    opacity: 0.8; /* ความโปร่งใสของไอคอน */
+    transition: opacity 0.3s; /* เพิ่มการเปลี่ยนแปลงความโปร่งใสเมื่อเลื่อนเมาส์ */
+}
+
+.footer-icon:hover {
+    opacity: 1; /* เมื่อเลื่อนเมาส์ไปที่ไอคอนจะทำให้โปร่งใสเต็มที่ */
+}
+
