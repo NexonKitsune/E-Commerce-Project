@@ -197,6 +197,24 @@ input[type="submit"].submit_btn:hover {
     background-color: #45a049;
 }
 
+.submit_btn {
+    display: block;
+    width: 100%; /* ปรับให้ปุ่มยาวเต็มหน้าจอ */
+    padding: 15px 0;
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0 auto; /* จัดตรงกลาง */
+}
+
+.submit_btn:hover {
+    background-color: #45a049;
+}
+
 /* FOOSTER */
 
 .footer-container {
