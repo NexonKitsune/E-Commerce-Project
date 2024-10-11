@@ -197,6 +197,7 @@ input[type="submit"].submit_btn:hover {
 }
 
 /* FOOSTER */
+
 .footer-container {
     background-color: #f1f1f1; /* สีพื้นหลังฟุตเตอร์ */
     padding: 20px 0; /* เพิ่ม padding ให้ฟุตเตอร์ */
@@ -219,4 +220,5 @@ input[type="submit"].submit_btn:hover {
 .footer-icon:hover {
     opacity: 1; /* เมื่อเลื่อนเมาส์ไปที่ไอคอนจะทำให้โปร่งใสเต็มที่ */
 }
+
 
