@@ -1,0 +1,147 @@
+@import url("https://fonts.googleapis.com/css?fami...|Oswald:300,400,700");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    
+}
+
+body{
+    font-family: 'Open Sans', sans-serif;
+    background: rgb(248, 248, 248);
+    margin: 1rem;
+}
+
+.container {
+    background-color: white;
+    
+}
+
+nav {
+    background-color: white;
+    margin-left: -1.5rem;
+    width: 1260px;
+    padding: 0.5rem 2rem 0.5rem 2rem;
+    position: sticky;
+    top: 0;
+    border-bottom: #000000 transparent;
+}
+
+.nav-con {
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo a {
+    font-size: 3rem;
+    color: #000000;
+    text-decoration: none;
+}
+
+.menu {
+    display: flex;
+    list-style: none;
+    align-items: center;
+}
+
+.menu li {
+    margin: 0 1rem;
+}
+
+.menu li a {
+    color: #000000;
+    text-decoration: none;
+}
+
+.login {
+    padding: 2rem 10rem 2rem 10rem;
+}
+
+.login h1, h3 {
+    display: flex;
+    margin: 2rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.login .loginbtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login .loginbtn li {
+    margin: 1rem;
+    text-decoration: none;
+    list-style-type: none;
+}
+
+.login .loginbtn li a {
+    text-decoration: none;
+    
+}
+
+.banner {
+    width: 100%;
+    height: 100%;
+    margin-bottom: 3rem;
+}
+
+.banner img {
+    color: #c2c0c0;
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+}
+
+
+.cattalog {
+    width: 1250;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 2rem;
+    margin: 2rem 0 2rem 0;
+}
+
+.cattalog .product {
+    width: 12rem;
+    height: 12rem;
+    margin: 1rem;
+}
+
+.cattalog .product img{
+    width: 11rem;
+    height: 11rem;
+}
+
+.banner2 {
+    width: 1250px;
+}
+
+.banner2 img {
+    width: 100%;
+}
+
+.footer {
+    display: flex;
+    justify-content: center;
+}
+
+.footer a {
+    text-decoration: none;
+    margin: 0.3rem;
+    width: 2rem;
+    height: 2rem;
+}
+
+.footer a i {
+    text-decoration: none;
+    font-size: 1.5rem;
+    color: #000000;
+}
+

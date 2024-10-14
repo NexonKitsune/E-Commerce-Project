@@ -121,11 +121,12 @@ body, html {
     font-weight: normal;
     font-style: normal;
 }
-
+        /* NAV STYLE */
 body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: #f5f5f5; /* Light background color */
+    background-image: url('/1Code/pic/banner2.png'); /* เปลี่ยนเป็น URL ของภาพพื้นหลังที่ต้องการ */
+    background-size: cover;
+    height: 100vh; /* ปรับขนาดตามต้องการ */
+    backdrop-filter: blur(10px); /* ปรับค่าระดับความเบลอ */
 }
 
 .navbar {

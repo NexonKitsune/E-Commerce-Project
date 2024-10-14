@@ -59,9 +59,11 @@ body {
     font-family: 'Robot9000', sans-serif; /* Use Robot 9000 font */
     font-size: 48px; /* Keep the font size for "SNEAKERS" */
     font-weight: 900; /* Bold text */
-    letter-spacing: 8px; /* Increase letter spacing */
+    letter-spacing: 5px; /* Increase letter spacing */
     color: #333;
 }
+
+
 
 .icon {
     width: 28px; /* Increased icon width */
