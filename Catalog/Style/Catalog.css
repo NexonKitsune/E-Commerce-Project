@@ -1,0 +1,13 @@
+.link-button {
+    display: inline-block; /* Makes the anchor behave like a button */
+    padding: 10px 20px; /* Adds padding for better appearance */
+    background-color: black; /* Button background color */
+    color: white; /* Text color */
+    text-decoration: none; /* Removes underline from the link */
+    border-radius: 5px; /* Rounds the corners */
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+.link-button:hover {
+    background-color: black; /* Darker color on hover */
+}

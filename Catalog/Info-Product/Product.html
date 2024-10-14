@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catalog Layout</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="HEADER-Prod.">
+
+        <!-- NAV BAR -->
+        <nav class="navbar">
+            <div class="navbar-left">
+                <a href="/ComingSoon/ComingSoon.html" target="_blank">gift guide</a>
+                <a href="#">sale</a>
+                <a href="/Catalog/Catalog.html">catalog</a>
+                <a href="/Index-Page/Website/index.html">shop</a>
+                <a href="/ComingSoon/ComingSoon.html" target="_blank">FAQ</a>
+            </div>
+            <div class="navbar-center">
+                SNEAKERS
+            </div>
+            <div class="navbar-right">
+                <a href="#">search</a>
+                <a href="#"><img src="/Picture/Cart_Icon.png" alt="Cart" class="icon"></a>
+            </div>
+        </nav>
+    </div>    
+
+    <div class="navbar-underline"></div>
+
+    </div>
+
+    <div class="container">
+        <div class="filters">
+            <h3>Keywords</h3>
+            <br>
+            <div>
+                <input type="checkbox" id="spring" name="keyword" value="Spring">
+                <label for="spring">Spring</label><br>
+                <br>
+                <br>
+                <input type="checkbox" id="smart" name="keyword" value="Smart">
+                <label for="smart">Smart</label><br>
+                <br>
+                <br>
+                <input type="checkbox" id="modern" name="keyword" value="Modern">
+                <label for="modern">Modern</label>
+                <br>
+                <br>
+            </div>
+            <hr>
+            
+            <br>
+            <br>
+            <h3>Price Range</h3>
+            <input type="range" id="price" name="price" min="0" max="100" value="50">
+            <label for="price">$0 - $100</label>
+            <br>
+            <br>
+
+            <h3>Color</h3>
+            <br>
+
+            <div>
+                <input type="checkbox" id="color1" name="color" value="Red">
+                <label for="color1">Red</label><br>
+                <br>
+                <br>
+                <input type="checkbox" id="color2" name="color" value="Blue">
+                <label for="color2">Blue</label><br>
+                <br>
+                <br>
+                <input type="checkbox" id="color3" name="color" value="Green">
+                <label for="color3">Green</label>
+                <br>
+                <br>
+            </div>
+            <hr>
+            
+            <br>
+            <br>
+            <h3>Size</h3>
+            <br>
+
+
+            <div>
+                <input type="checkbox" id="size1" name="size" value="Small">
+                <label for="size1">Small</label><br>
+                <br>
+                <br>
+                <input type="checkbox" id="size2" name="size" value="Medium">
+                <label for="size2">Medium</label><br>
+                <br>
+                <br>
+                <input type="checkbox" id="size3" name="size" value="Large">
+                <label for="size3">Large</label>
+                <br>
+                <br>
+            </div>
+        </div>
+        
+
+        <!-- ส่วนด้านขวา -->
+        <main class="products">
+            <div class="search-bar">
+                <input type="text" placeholder="Search">
+                <button type="button">🔍</button>
+                <button class="filter-button">New</button>
+                <button>Price ascending</button>
+                <button>Price descending</button>
+                <button>Rating</button>
+            </div>
+
+            <div class="product-list">
+                <div class="product">
+                    <a href="/Product/Product.html" class="product-link">
+                        <img src="../img/Shoes Type/18e3c13a2f4e6a63e5a2b34bdfbf230a0e289b61_New_Balance_W1080N13B_Fresh_Foam_X_1080v13_0.avif" alt="Retropy E5 Shoes">
+                        <p>Retropy E5 Shoes</p>
+                        <p>$100</p>
+                    </a>
+                </div>
+                <div class="product">
+                    <a href="link-to-product-details.html" class="product-link">
+                        <img src="../img/Shoes Type/216600_CHAR_400x400.jpg" alt="Classic Sneakers">
+                        <p>Classic Sneakers</p>
+                        <p>$80</p>
+                    </a>
+                </div>
+                <div class="product">
+                    <a href="link-to-product-details.html" class="product-link">
+                        <img src="../img/Shoes Type/new-balance-BeigeMarron-Hombre-Fresh-Foam-X-1080-Utility-EnMarron-Mesh-Talla.webp" alt="Running Shoes">
+                        <p>Running Shoes</p>
+                        <p>$120</p>
+                    </a>
+                </div>
+                <div class="product">
+                    <a href="link-to-product-details.html" class="product-link">
+                        <img src="../img/Shoes Type/new-balance-blue-Homme-Fresh-Foam-X-1080V13-En-Synthetic-Taille.webp" alt="Casual Shoes">
+                        <p>Casual Shoes</p>
+                        <p>$70</p>
+                    </a>
+                </div>
+                <div class="product">
+                    <a href="link-to-product-details.html" class="product-link">
+                        <img src="../img/Shoes Type/new-balance-green-Fresh-Foam-X-1080-Utility.webp" alt="Sporty Shoes">
+                        <p>Sporty Shoes</p>
+                        <p>$90</p>
+                    </a>
+                </div>
+                <div class="product">
+                    <a href="link-to-product-details.html" class="product-link">
+                        <img src="../img/Shoes Type/89fdeb726922a932e4ecb21b03f2ab18a71e72a4_W860A14_M860A14_0.avif" alt="Luxury Shoes">
+                        <p>Luxury Shoes</p>
+                        <p>$150</p>
+                    </a>
+                </div>
+            </div>
+
+            
+                <!-- ผลิตภัณฑ์เพิ่มเติมที่นี่ -->
+            </div>
+        </main>
+
+        <!-- FOOSTER -->
+        <div class="Fooster-Delivery">
+
+            <footer class="footer-container">
+                <div class="footer-underline"></div>
+                <div class="icon-row">
+                    <a href="#"><img src="/Picture/Xlogo.avif" alt="Icon 1" class="footer-icon"></a>
+                    <a href="#"><img src="/Picture/IGLogo.png" alt="Icon 2" class="footer-icon"></a>
+                    <a href="#"><img src="/Picture/YoutubeLogo.png" alt="Icon 3" class="footer-icon"></a>
+                    <a href="#"><img src="/Picture/LikeinLogo.png" alt="Icon 4" class="footer-icon"></a>
+                </div>
+            </footer>
+            
+        </div>
+    </div>
+</body>
+</html>

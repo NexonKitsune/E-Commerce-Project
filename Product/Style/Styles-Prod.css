@@ -1,0 +1,380 @@
+/* NAVBAR */
+
+/* NAV BARS */
+@font-face {
+    font-family: 'Robot9000';
+    src: url('/Front/robot-9000-font/Robot9000-MVxZx.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5; /* Light background color */
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background-color: #ffffff; /* Navbar background color */
+    border-bottom: 2px solid #ddd; /* Bottom border */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Shadow for aesthetics */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    transition: background-color 0.3s; /* Smooth transition for background */
+}
+
+.navbar:hover {
+    background-color: #f9f9f9; /* Change background color on hover */
+}
+
+.navbar-left,
+.navbar-right {
+    display: flex;
+    gap: 20px; /* Reduced gap to 20px for closer spacing */
+}
+
+.navbar-left a,
+.navbar-right a {
+    text-decoration: none;
+    color: #333; /* Darker color for better readability */
+    font-size: 18px; /* Increased font size for links */
+    font-weight: bold;
+    transition: color 0.3s, transform 0.3s; /* Added transition for transform */
+}
+
+.navbar-left a:hover,
+.navbar-right a:hover {
+    color: #000000; /* Change color on hover */
+    transform: translateY(-2px); /* Slight upward movement on hover */
+}
+
+/* Use Source Code Pro for gift guide and sale */
+.navbar-left a {
+    font-family: 'Source Code Pro', monospace; /* Use Source Code Pro font */
+}
+
+.navbar-center {
+    font-family: 'Robot9000', sans-serif; /* Use Robot 9000 font */
+    font-size: 48px; /* Keep the font size for "SNEAKERS" */
+    font-weight: 900; /* Bold text */
+    letter-spacing: 8px; /* Increase letter spacing */
+    color: #333;
+}
+
+.icon {
+    width: 28px; /* Increased icon width */
+    height: 28px; /* Increased icon height */
+}
+
+.icon:hover {
+    transform: scale(1.1); /* Scale icon on hover */
+}
+
+/* Style for the underline */
+.navbar-underline {
+    height: 2px; /* Thickness of the underline */
+    background-color: #333; /* Color of the underline */
+    width: 100%; /* Full width */
+    position: relative; /* Position relative to the nav */
+    top: 0; /* Position just below the nav */
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column; /* ให้ nav เป็นแนวตั้ง */
+        padding: 10px; /* ปรับ padding สำหรับ mobile */
+    }
+
+    .navbar-center {
+        font-size: 36px; /* ปรับขนาดฟอนต์สำหรับ "SNEAKERS" */
+        letter-spacing: 4px; /* ปรับระยะห่างระหว่างตัวอักษร */
+        margin-bottom: 10px; /* เพิ่มระยะห่างจาก nav ข้างล่าง */
+    }
+
+    .navbar-left {
+        display: flex;
+        flex-direction: column; /* ให้ navbar-left เป็นแนวตั้ง */
+        gap: 5px; /* เพิ่มระยะห่างระหว่างลิงก์ */
+        align-items: center; /* จัดกลาง */
+    }
+
+    .navbar-left a {
+        font-size: 16px; /* ปรับขนาดฟอนต์สำหรับลิงก์ */
+        font-weight: bold;
+    }
+}
+
+/* CONTAINERS */
+
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f7f7f7; /* สีพื้นหลัง */
+    display: flex;
+    flex-direction: column; /* ใช้แนวตั้ง */
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #fff; /* พื้นหลัง */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* เงา */
+}
+
+.menu-toggle {
+    display: none; /* ซ่อนเมนูมือถือในหน้าจอขนาดใหญ่ */
+    flex-direction: column;
+    cursor: pointer; /* แสดงเป็นมือเมื่อชี้ไปที่ปุ่ม */
+}
+
+.bar {
+    height: 3px;
+    width: 25px;
+    background-color: #333; /* สีบาร์ */
+    margin: 3px 0; /* ระยะห่างด้านบนและด้านล่าง */
+}
+
+.nav {
+    display: flex; /* ใช้ Flexbox สำหรับการจัดเรียง */
+}
+
+.nav ul {
+    display: flex;
+    list-style: none; /* ซ่อนจุด */
+    margin: 0;
+    padding: 0;
+}
+
+.nav li {
+    margin: 0 15px; /* ระยะห่างด้านซ้ายและขวา */
+}
+
+.nav a {
+    text-decoration: none; /* ไม่ให้มีขีดเส้นใต้ */
+    color: #333; /* สีตัวอักษร */
+}
+
+.container {
+    max-width: 800px; /* ความกว้างสูงสุดสำหรับมือถือ */
+    width: 100%; /* เต็มความกว้าง */
+    padding: 20px;
+    margin: auto; /* จัดกลาง */
+    background-color: #fff; /* พื้นหลังของคอนเทนเนอร์ */
+    border-radius: 8px; /* มุมมน */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* เงา */
+}
+
+.product-info {
+    border: 1px solid #ddd; /* เส้นขอบของผลิตภัณฑ์ */
+    padding: 20px;
+    border-radius: 8px; /* มุมมน */
+    margin-bottom: 40px; /* ระยะห่างด้านล่าง */
+}
+
+.image-placeholder {
+    align-items: center;
+    width: 100%;
+    height: 200px; /* ความสูงที่เหมาะสม */
+    background-color: #e0e0e0; /* พื้นหลังของรูปภาพ */
+    margin-bottom: 20px; /* ระยะห่างด้านล่าง */
+    border-radius: 4px; /* มุมมน */
+}
+
+.text-heading {
+    font-size: 24px; /* ขนาดตัวอักษร */
+    margin: 10px 0; /* ระยะห่างด้านบนและด้านล่าง */
+}
+
+.tag {
+    background-color: lightgreen; /* สีของแท็ก */
+    padding: 5px;
+    border-radius: 3px; /* มุมมน */
+    display: inline-block;
+    margin-bottom: 10px; /* ระยะห่างด้านล่าง */
+}
+
+.price {
+    font-size: 22px; /* ขนาดตัวอักษรสำหรับราคา */
+    color: #333; /* สีตัวอักษร */
+    margin-bottom: 10px; /* ระยะห่างด้านล่าง */
+}
+
+.description {
+    margin-bottom: 15px; /* ระยะห่างด้านล่าง */
+    color: #555; /* สีของคำอธิบาย */
+}
+
+.labels {
+    margin-bottom: 15px; /* ระยะห่างด้านล่าง */
+}
+
+.labels label {
+    display: block; /* ให้ label แสดงเป็นบรรทัดใหม่ */
+    margin: 5px 0; /* ระยะห่างด้านบนและด้านล่าง */
+}
+
+select {
+    width: calc(50% - 10px); /* กำหนดความกว้างของ select */
+    margin-bottom: 10px; /* ระยะห่างด้านล่าง */
+    padding: 8px; /* ระยะห่างภายใน */
+    border: 1px solid #ddd; /* เส้นขอบ */
+    border-radius: 4px; /* มุมมน */
+}
+
+.action-button {
+    background-color: #333; /* สีพื้นหลังปุ่ม */
+    color: white; /* สีตัวอักษร */
+    padding: 10px 15px; /* ระยะห่างภายในปุ่ม */
+    border: none; /* ไม่มีเส้นขอบ */
+    cursor: pointer; /* แสดงเป็นมือเมื่อชี้ไปที่ปุ่ม */
+    margin-bottom: 20px; /* ระยะห่างด้านล่าง */
+    border-radius: 4px; /* มุมมน */
+}
+
+.title {
+    margin-top: 20px; /* ระยะห่างด้านบน */
+    font-size: 18px; /* ขนาดตัวอักษร */
+}
+
+.faq {
+    margin: 10px 0; /* ระยะห่างด้านบนและด้านล่าง */
+    color: #777; /* สีของ FAQ */
+}
+
+.latest-reviews {
+    margin-top: 40px; /* ระยะห่างด้านบน */
+}
+
+.latest-reviews h2 {
+    margin-bottom: 20px; /* ระยะห่างด้านล่าง */
+}
+
+.review {
+    border: 1px solid #ddd; /* เส้นขอบของการรีวิว */
+    padding: 10px; /* ระยะห่างภายใน */
+    margin-bottom: 10px; /* ระยะห่างด้านล่าง */
+    border-radius: 4px; /* มุมมน */
+    background-color: #f9f9f9; /* พื้นหลังของการรีวิว */
+}
+
+.star-rating {
+    font-size: 18px; /* ขนาดตัวอักษร */
+    color: #ffcc00; /* สีของดาว */
+}
+
+.reviewer-name, .review-date {
+    display: block; /* ให้ชื่อผู้รีวิวและวันที่แสดงเป็นบรรทัดใหม่ */
+    font-size: 14px; /* ขนาดตัวอักษร */
+    color: #999; /* สีของข้อความ */
+}
+
+.newsletter {
+    margin-top: 40px; /* ระยะห่างด้านบน */
+}
+
+.newsletter h2 {
+    margin-bottom: 10px; /* ระยะห่างด้านล่าง */
+}
+
+.newsletter-input {
+    display: flex; /* ใช้ Flexbox สำหรับการจัดเรียง */
+}
+
+.newsletter input {
+    flex: 1; /* ให้ input เติบโตเต็มที่ */
+    padding: 10px; /* ระยะห่างภายใน */
+    margin-right: 10px; /* ระยะห่างด้านขวา */
+    border: 1px solid #ddd; /* เส้นขอบของ input */
+    border-radius: 4px; /* มุมมน */
+}
+
+.submit-button {
+    background-color: #333; /* สีพื้นหลังปุ่ม */
+    color: white; /* สีตัวอักษร */
+    padding: 10px 15px; /* ระยะห่างภายในปุ่ม */
+    border: none; /* ไม่มีเส้นขอบ */
+    cursor: pointer; /* แสดงเป็นมือเมื่อชี้ไปที่ปุ่ม */
+    border-radius: 4px; /* มุมมน */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: flex; /* แสดงเมนูมือถือ */
+    }
+
+    .nav {
+        display: none; /* ซ่อนเมนูในหน้าจอเล็ก */
+        flex-direction: column; /* จัดเรียงในแนวตั้ง */
+        width: 100%; /* เต็มความกว้าง */
+    }
+
+    .nav.active {
+        display: flex; /* แสดงเมนูเมื่อคลิก */
+    }
+
+    .nav ul {
+        padding: 0; /* ไม่มีการpadding */
+    }
+
+    .nav li {
+        margin: 10px 0; /* ระยะห่างด้านบนและด้านล่าง */
+    }
+
+    .image-placeholder {
+        height: 150px; /* ลดความสูงของภาพ */
+    }
+
+    .text-heading {
+        font-size: 20px; /* ขนาดตัวอักษรสำหรับจอเล็ก */
+    }
+
+    .price {
+        font-size: 18px; /* ลดขนาดตัวอักษรสำหรับราคา */
+    }
+
+    .action-button {
+        width: 100%; /* ปรับปุ่มให้เต็มความกว้าง */
+    }
+
+    .latest-reviews h2, .newsletter h2 {
+        font-size: 20px; /* ขนาดตัวอักษร */
+    }
+
+    .star-rating {
+        font-size: 16px; /* ลดขนาดตัวอักษรสำหรับดาว */
+    }
+}
+
+/* FOOTER */
+
+/* Footer Styles */
+.footer-container {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.footer-underline {
+    height: 2px;
+    background-color: #ccc;
+    margin: 10px 0;
+}
+
+.icon-row {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.footer-icon {
+    width: 30px;
+    height: 30px;
+}

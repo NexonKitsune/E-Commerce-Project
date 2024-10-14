@@ -1,0 +1,288 @@
+
+/* NAV BARS */
+@font-face {
+    font-family: 'Robot9000';
+    src: url('/Front/robot-9000-font/Robot9000-MVxZx.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5; /* Light background color */
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background-color: #ffffff; /* Navbar background color */
+    border-bottom: 2px solid #ddd; /* Bottom border */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Shadow for aesthetics */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    transition: background-color 0.3s; /* Smooth transition for background */
+}
+
+.navbar:hover {
+    background-color: #f9f9f9; /* Change background color on hover */
+}
+
+.navbar-left,
+.navbar-right {
+    display: flex;
+    gap: 20px; /* Reduced gap to 20px for closer spacing */
+}
+
+.navbar-left a,
+.navbar-right a {
+    text-decoration: none;
+    color: #333; /* Darker color for better readability */
+    font-size: 18px; /* Increased font size for links */
+    font-weight: bold;
+    transition: color 0.3s, transform 0.3s; /* Added transition for transform */
+}
+
+.navbar-left a:hover,
+.navbar-right a:hover {
+    color: #000000; /* Change color on hover */
+    transform: translateY(-2px); /* Slight upward movement on hover */
+}
+
+/* Use Source Code Pro for gift guide and sale */
+.navbar-left a {
+    font-family: 'Source Code Pro', monospace; /* Use Source Code Pro font */
+}
+
+.navbar-center {
+    font-family: 'Robot9000', sans-serif; /* Use Robot 9000 font */
+    font-size: 48px; /* Keep the font size for "SNEAKERS" */
+    font-weight: 900; /* Bold text */
+    letter-spacing: 8px; /* Increase letter spacing */
+    color: #333;
+}
+
+.icon {
+    width: 28px; /* Increased icon width */
+    height: 28px; /* Increased icon height */
+}
+
+.icon:hover {
+    transform: scale(1.1); /* Scale icon on hover */
+}
+
+/* Style for the underline */
+.navbar-underline {
+    height: 2px; /* Thickness of the underline */
+    background-color: #333; /* Color of the underline */
+    width: 100%; /* Full width */
+    position: relative; /* Position relative to the nav */
+    top: 0; /* Position just below the nav */
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column; /* ให้ nav เป็นแนวตั้ง */
+        padding: 10px; /* ปรับ padding สำหรับ mobile */
+    }
+
+    .navbar-center {
+        font-size: 36px; /* ปรับขนาดฟอนต์สำหรับ "SNEAKERS" */
+        letter-spacing: 4px; /* ปรับระยะห่างระหว่างตัวอักษร */
+        margin-bottom: 10px; /* เพิ่มระยะห่างจาก nav ข้างล่าง */
+    }
+
+    .navbar-left {
+        display: flex;
+        flex-direction: column; /* ให้ navbar-left เป็นแนวตั้ง */
+        gap: 5px; /* เพิ่มระยะห่างระหว่างลิงก์ */
+        align-items: center; /* จัดกลาง */
+    }
+
+    .navbar-left a {
+        font-size: 16px; /* ปรับขนาดฟอนต์สำหรับลิงก์ */
+        font-weight: bold;
+    }
+}
+/* END NAV */
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f5f5f5; /* พื้นหลังสีเทาอ่อน */
+}
+
+
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 3fr; /* 2 คอลัมน์สำหรับเดสก์ท็อป */
+    gap: 20px; /* ช่องว่างระหว่างคอลัมน์ */
+    padding: 20px;
+}
+
+.filters {
+    border: 1px solid #ccc; /* เส้นขอบสีเทา */
+    border-radius: 8px; /* มุมมน */
+    background-color: #ffffff; /* สีพื้นหลัง */
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* เงา */
+}
+
+.products {
+    
+    border: 1px solid #ccc; /* เส้นขอบสีเทา */
+    border-radius: 8px; /* มุมมน */
+    background-color: #ffffff; /* สีพื้นหลัง */
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* เงา */
+}
+
+.product-link {
+    text-decoration: none;
+    color: inherit; /* ทำให้สีลิงก์เหมือนกับสีข้อความปกติ */
+}
+
+.search-bar {
+    display: flex; /* จัดแถบค้นหาให้อยู่ในแนวนอน */
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.search-bar input {
+    flex-grow: 1; /* ขยายช่องค้นหาให้เต็มที่ */
+    padding: 10px;
+    border: 1px solid #ccc; /* เส้นขอบสีเทา */
+    border-radius: 5px; /* มุมมน */
+    transition: border-color 0.3s; /* เอฟเฟกต์เปลี่ยนสีเส้นขอบ */
+}
+
+.search-bar input:focus {
+    border-color: #000; /* เปลี่ยนสีเส้นขอบเมื่อมีการโฟกัส */
+    outline: none; /* ไม่ให้มีเส้นขอบ */
+}
+
+.search-bar button {
+    background-color: #000; /* สีปุ่มดำ */
+    color: white; /* สีข้อความ */
+    border: none; /* ไม่มีเส้นขอบ */
+    padding: 10px 15px; /* Padding ของปุ่ม */
+    border-radius: 5px; /* มุมมน */
+    cursor: pointer; /* เปลี่ยนเป็นมือเมื่อโฮเวอร์ */
+    transition: background-color 0.3s; /* เอฟเฟกต์เปลี่ยนสี */
+}
+
+.search-bar button:hover {
+    background-color: #444; /* เปลี่ยนสีปุ่มเมื่อโฮเวอร์ */
+}
+
+.product-list {
+    display: grid; /* จัดให้เป็น Grid */
+    grid-template-columns: repeat(3, 1fr); /* 3 คอลัมน์ */
+    gap: 20px; /* ช่องว่างระหว่างสินค้า */
+}
+
+.product {
+    border: 1px solid #ccc; /* เส้นขอบสีเทา */
+    border-radius: 8px; /* มุมมน */
+    text-align: center; /* จัดข้อความกลาง */
+    padding: 10px;
+    background-color: #ffffff; /* สีพื้นหลังของสินค้า */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* เงา */
+    transition: transform 0.3s; /* เอฟเฟกต์เคลื่อนที่ */
+}
+
+.product:hover {
+    transform: scale(1.05); /* ขยายเมื่อโฮเวอร์ */
+}
+
+.product img {
+    max-width: 100%; /* ทำให้ภาพขนาดเต็มพื้นที่ */
+    height: auto; /* คงอัตราส่วนภาพ */
+    margin-bottom: 10px; /* ช่องว่างด้านล่างของภาพ */
+}
+
+.product p {
+    font-weight: bold; /* ทำให้ข้อความชื่อสินค้าเป็นตัวหนา */
+    margin: 5px 0; /* ช่องว่างระหว่างข้อความ */
+    color: #333; /* สีตัวอักษร */
+}
+
+.filters h3 {
+    margin-bottom: 10px; /* ช่องว่างด้านล่างของหัวข้อ */
+}
+
+.filters div {
+    margin-bottom: 15px; /* ช่องว่างระหว่างกลุ่ม */
+}
+
+.filters input[type="range"] {
+    width: 100%; /* ให้แถบเลื่อนกว้างเต็มพื้นที่ */
+    margin: 10px 0; /* ช่องว่างระหว่างแถบเลื่อนและ label */
+}
+
+.filters label {
+    margin-left: 5px; /* ช่องว่างระหว่าง checkbox และ label */
+}
+
+/* ปรับขนาดของ checkbox */
+.filters input[type="checkbox"] {
+    margin-right: 5px; /* ช่องว่างระหว่าง checkbox และ label */
+}
+
+/* Media Queries สำหรับรองรับมือถือและแท็บเล็ต */
+@media (max-width: 768px) {
+    .container {
+        grid-template-columns: 1fr; /* 1 คอลัมน์สำหรับอุปกรณ์มือถือ */
+    }
+
+    .product-list {
+        grid-template-columns: repeat(2, 1fr); /* 2 คอลัมน์สำหรับแท็บเล็ต */
+    }
+}
+
+@media (max-width: 480px) {
+    .search-bar {
+        flex-direction: column; /* แถบค้นหาเป็นแนวตั้ง */
+    }
+
+    .search-bar input {
+        width: 100%; /* ให้ช่องค้นหากว้างเต็มพื้นที่ */
+        margin-bottom: 10px; /* ช่องว่างด้านล่างของช่องค้นหา */
+    }
+}
+
+/* Footer Styles */
+.footer-container {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.footer-underline {
+    height: 2px;
+    background-color: #ccc;
+    margin: 10px 0;
+}
+
+.icon-row {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.footer-icon {
+    width: 30px;
+    height: 30px;
+}
+
